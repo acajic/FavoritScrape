@@ -1,3 +1,4 @@
+package server;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -94,7 +95,7 @@ public class HttpClient {
 	public static void main(String[] args) throws ClientProtocolException, IOException, URISyntaxException {
 		HttpClient httpClient = new HttpClient();
 		
-		Future<Content> future = httpClient.get("http://index.hr", new HashMap<String, Object>(), new FutureCallback<Content>() {
+		httpClient.get("http://index.hr", new HashMap<String, Object>(), new FutureCallback<Content>() {
 		    
 			public void failed (final Exception e) {
 		        
@@ -111,8 +112,5 @@ public class HttpClient {
 		    	System.exit(0);
 		    }
 		});
-		
-		int a = 5;
-		System.out.println(a);
 	}
 }
