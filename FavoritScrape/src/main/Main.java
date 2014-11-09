@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.concurrent.Future;
 
 import org.apache.http.client.fluent.Content;
@@ -15,7 +16,8 @@ public class Main {
 		HttpClient httpClient = new HttpClient();
 		FavoritScraper favoritScraper = new FavoritScraper(httpClient);
 		
-		Future<Content> favoritBasicTodayFuture = favoritScraper.scrapeBasicForToday();
+		Future<ArrayList<Content>> favoritBasicTodayFuture = favoritScraper.scrapeAllForToday();
+		
 		
 		favoritBasicTodayFuture.get();
 		httpClient.executorService.shutdown();

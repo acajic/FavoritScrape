@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="lib/httpcomponents/httpcore-4.3.2.jar"/>
 	<classpathentry kind="lib" path="lib/httpcomponents/httpmime-4.3.5.jar"/>
 	<classpathentry kind="lib" path="lib/gson/gson-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/apache_commons/commons-lang3-3.3.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

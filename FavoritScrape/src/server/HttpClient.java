@@ -86,6 +86,7 @@ public class HttpClient {
 		System.out.println(request);
 		
 		Async async = Async.newInstance().use(this.executorService);
+		
 		Future<Content> future = async.execute(request, callback);
 		
 		return future;
