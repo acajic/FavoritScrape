@@ -3,6 +3,7 @@ package bookies;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -80,7 +81,12 @@ public class FavoritScraper {
 	public Future<Content> scrapeBasicForToday() throws UnsupportedEncodingException, URISyntaxException {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("categoryIDs", "");
-		params.put("selectedDate", "10.11.");
+		
+		Calendar cal = Calendar.getInstance();
+		int month = cal.get(Calendar.MONTH) + 1;
+		int date = cal.get(Calendar.DATE);
+		
+		params.put("selectedDate", "" + date + "." + month +".");
 		
 		Callable<Content> callable  = new Callable<Content>() {
 
